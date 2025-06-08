@@ -1,138 +1,138 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>Magical Horizon Archive - Sunshine Days</title>
-<style>
-  body {
-    background-color: #008080; /* teal desktop background */
-    margin: 0; padding: 20px;
-    font-family: 'Courier New', monospace;
-  }
-  .window {
-    width: 600px;
-    border: 2px solid #000;
-    background: #C0C0C0;
-    box-shadow: 4px 4px 0 #666;
-    margin: 0 auto;
-  }
-  .title-bar {
-    background: #000080;
-    color: white;
-    padding: 4px;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .title-bar .title { font-weight: bold; }
-  .title-bar .buttons span {
-    display: inline-block;
-    width: 16px; height: 14px;
-    margin-left: 2px;
-    background: #C0C0C0;
-    border: 2px solid #fff;
-    box-shadow: inset -1px -1px 0 #000;
-    text-align: center;
-    line-height: 14px;
-    font-weight: bold;
-    cursor: default;
-  }
-  .menu-bar {
-    background: #C0C0C0;
-    padding: 4px;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #777;
-  }
-  .menu-bar span {
-    margin-right: 12px;
-    cursor: default;
-  }
-  .content {
-    background: white;
-    padding: 10px;
-    height: 300px;
-    overflow-y: auto;
-    font-size: 14px;
-  }
-  .footer {
-    background: #C0C0C0;
-    padding: 4px;
-    font-size: 12px;
-  }
-  a.translate-btn {
-    display: inline-block;
-    margin-top: 10px;
-    background: #000080;
-    color: #fff;
-    padding: 4px 8px;
-    text-decoration: none;
-    font-size: 12px;
-  }
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Magical Horizon Archive</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body {
+      background: #ffe4e1 url('https://i.imgur.com/ISlhk1r.gif') repeat;
+      font-family: 'Press Start 2P', cursive;
+      color: #000000;
+      margin:0; padding:20px;
+    }
+    .win {
+      background: #faf8f0;
+      border:4px solid #000080;
+      max-width:640px;
+      margin: auto;
+      box-shadow: 4px 4px 0px #808080;
+    }
+    .titlebar {
+      background:#000080;
+      color:#fff;
+      padding:4px 8px;
+      font-size:14px;
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+    }
+    .titlebar .buttons span {
+      display:inline-block;
+      width:12px; height:12px;
+      background:#ff0000;
+      margin-left:4px;
+    }
+    nav {
+      background:#fff;
+      border:2px solid #000080;
+      padding:8px;
+      margin-top:8px;
+    }
+    nav ul{ list-style:none; padding:0;}
+    nav li {
+      cursor:pointer; padding:6px;
+      margin:2px 0;
+      background:#e0e0ff;
+      border:2px solid #8080ff;
+    }
+    nav li:hover{background:#c0c0ff;}
+    .submenu{display:none; margin-left:20px;}
+    main {
+      padding:10px;
+      background:#fff;
+      border-top:2px solid #000080;
+      min-height:160px;
+    }
+    button {
+      margin:10px; padding:6px 12px;
+      background:#000080;
+      color:#fff;
+      border:none;
+      cursor:pointer;
+      font-family:'Press Start 2P',cursive;
+    }
+    button:hover{background:#4040ff;}
+  </style>
 </head>
 <body>
 
-<div class="window">
-  <div class="title-bar">
-    <div class="title">magicalhorizon.web‑jp.cc</div>
+<div class="win">
+  <div class="titlebar">
+    <div>Sunshine Days Archive</div>
     <div class="buttons">
-      <span>—</span><span>□</span><span>✕</span>
+      <span></span><span></span><span></span>
     </div>
   </div>
-  <div class="menu-bar">
-    <span>File</span><span>Edit</span><span>View</span><span>Help</span>
-  </div>
-  <div class="content" id="main-content">
-    <p>ようこそ、皆さん。😊<br><br>
-    このサイトは**Sunshine Days**のアーカイブですが、2014年に閉鎖されました。<br>
-    心の中では…物語は今も続いていると私は信じています。<br><br>
-    キャラクターたちは私と友達自身。<br>
-    誰かの夜に小さな光になっていたのなら、それが私の宝物です。<br><br>
-    魔法は見えないところにある。<br>
-    そして…あなたの心の中にも。それを忘れないでください。<br><br>
-    🌸 RibbonDreamzより<br>
-    (2014年12月21日)</p>
-    <a href="#" class="translate-btn" onclick="translate(); return false;">Translate / 翻訳</a>
-  </div>
-  <div class="footer">
-    Microsoft Internet Explorer -- 6.0   |   Windows 2000
-  </div>
+
+  <nav>
+    <ul>
+      <li onclick="toggleSub('s1')">Season 1</li>
+      <ul id="s1" class="submenu">
+        <li onclick="showEp('Episode 1: The Beginning')">Ep 1: The Beginning</li>
+        <!-- ... jusqu'à Ep 12 -->
+        <li onclick="showEp('Episode 12: The End')">Ep 12: The End</li>
+      </ul>
+      <li onclick="toggleSub('s2')">Season 2</li>
+      <ul id="s2" class="submenu">
+        <li onclick="showEp('Uh oh nothing anymore !')">Uh oh nothing anymore !</li>
+      </ul>
+      <li onclick="toggleSub('s3')">Season 3</li>
+      <ul id="s3" class="submenu">
+        <li onclick="showEp('Uh oh nothing anymore !')">Uh oh nothing anymore !</li>
+      </ul>
+      <li onclick="toggleSub('s4')">Season 4</li>
+      <ul id="s4" class="submenu">
+        <li onclick="showEp('Uh oh nothing anymore !')">Uh oh nothing anymore !</li>
+      </ul>
+    </ul>
+  </nav>
+
+  <main id="content">
+    <p>ようこそ！このサイトは「Sunshine Days」のアーカイブです。  
+    このサイトは2014年に閉鎖されましたが、ファンが内容を保存しています。(•‿•)</p>
+  </main>
+
+  <button onclick="toggleLang()">🇯🇵/🇺🇸</button>
 </div>
 
 <script>
-  let isJap = true;
-  const main = document.getElementById('main-content');
+  function toggleSub(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'block' ? 'none' : 'block';
+  }
 
-  function translate(){
-    if(isJap){
-      main.innerHTML = `
-        <p>Hello everyone! 😊<br><br>
-        This site is an archive of <b>Sunshine Days</b>, but it was closed in 2014.<br>
-        I believe the story still lives in your hearts.<br><br>
-        The characters come from me and my friends.<br>
-        If they ever shone as a little light in your night, that means the world to me.<br><br>
-        Magic exists where you cannot see it.<br>
-        And it lives... in your heart too. Please don’t forget.<br><br>
-        🌸 From RibbonDreamz<br>
-        (December 21, 2014)</p>
-        <a href="#" class="translate-btn" onclick="translate(); return false;">日本語 / Japanese</a>
-      `;
-      isJap = false;
+  function showEp(title) {
+    const cnt = document.getElementById('content');
+    if(title.includes('Uh oh')) {
+      cnt.innerHTML = `<h2>${title}</h2><p>Sorry, this episode is lost or never existed. (•﹏•)</p>`;
     } else {
-      main.innerHTML = `
-        <p>ようこそ、皆さん。😊<br><br>
-        このサイトは**Sunshine Days**のアーカイブですが、2014年に閉鎖されました。<br>
-        心の中では…物語は今も続いていると私は信じています。<br><br>
-        キャラクターたちは私と友達自身。<br>
-        誰かの夜に小さな光になっていたのなら、それが私の宝物です。<br><br>
-        魔法は見えないところにある。<br>
-        そして…あなたの心の中にも。それを忘れないでください。<br><br>
-        🌸 RibbonDreamzより<br>
-        (2014年12月21日)</p>
-        <a href="#" class="translate-btn" onclick="translate(); return false;">Translate / 翻訳</a>
-      `;
-      isJap = true;
+      cnt.innerHTML = `<h2>${title}</h2><p>Episode info has vanished, but memories remain! (✿◕‿◕)</p>`;
     }
+  }
+
+  let jap = true;
+  function toggleLang() {
+    const cnt = document.getElementById('content');
+    if(jap) {
+      cnt.innerHTML = `<p>Welcome! This is an archive for “Sunshine Days”.<br>
+        The original site closed in 2014, but fans saved what they could. (•‿•)</p>`;
+    } else {
+      cnt.innerHTML = `<p>ようこそ！このサイトは「Sunshine Days」のアーカイブです。<br>
+        このサイトは2014年に閉鎖されましたが、ファンが内容を保存しています。(•‿•)</p>`;
+    }
+    jap = !jap;
   }
 </script>
 
