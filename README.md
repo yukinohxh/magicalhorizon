@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>マジカルホライズン ✿</title>
+  <style>
+    body {
+      background-color: #ffeefc;
+      color: #444;
+      font-family: 'Courier New', monospace;
+      padding: 20px;
+      image-rendering: pixelated;
+    }
+    .window {
+      border: 2px solid #888;
+      background: #fff;
+      padding: 10px;
+      width: 400px;
+      box-shadow: 4px 4px #ccc;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 20px;
+      text-align: center;
+      color: #ff6ad5;
+    }
+    .menu {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .menu button {
+      margin: 5px;
+      background: #ffd4f4;
+      border: 1px solid #aaa;
+      font-family: 'Courier New', monospace;
+      padding: 6px;
+    }
+    .ep {
+      display: none;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .ep.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="window">
+    <h1>✿ Magical Horizon ✿</h1>
+    <p>このサイトは2014年に閉鎖されました。<br>私たちの魔法はいつまでも心に残ります。</p>
+    <p><em>This website has been closed since 2014. The magic lives on in our hearts.</em></p>
+    <div class="menu">
+      <button onclick="showSeason('s1')">Season 1</button>
+      <button onclick="showSeason('s2')">Season 2</button>
+      <button onclick="showSeason('s3')">Season 3</button>
+      <button onclick="showSeason('s4')">Season 4</button>
+    </div>
+    <div id="s1" class="ep">Episode list: <br>
+      - Ep01: "New Transfer Student!"<br>
+      - Ep02: "The Hidden Flower"<br>
+      - (...more)<br><br>
+      <strong>⚠️ Uh oh! Nothing anymore…</strong>
+    </div>
+    <div id="s2" class="ep">Episode list: <br>
+      - Ep01: "Shadows at Sunset"<br>
+      - Ep02: "Mirror Garden"<br>
+      - (...more)<br><br>
+      <strong>⚠️ Uh oh! Nothing anymore…</strong>
+    </div>
+    <div id="s3" class="ep">Episode list: <br>
+      - Ep01: "Dream Dive"<br>
+      - Ep02: "Glitch Memory"<br>
+      - (...more)<br><br>
+      <strong>⚠️ Uh oh! Nothing anymore…</strong>
+    </div>
+    <div id="s4" class="ep">Episode list: <br>
+      - Ep01: "The Last Spell"<br>
+      - Ep02: "Fading Footsteps"<br>
+      - (...more)<br><br>
+      <strong>⚠️ Uh oh! Nothing anymore…</strong>
+    </div>
+  </div>
+
+  <script>
+    function showSeason(id) {
+      document.querySelectorAll('.ep').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
